@@ -1,13 +1,23 @@
 require('normalize.css');
+require('./styles/base.scss');
 
-import styles from './styles/core.css';
+import {
+    container,
+    aside
+} from './styles/main.scss';
 import React, { Component } from 'react';
+
+import ServerWrapper from '../server-dashboard/serverWrapper.component';
+import AppsWrapper from '../apps-dashboard/appsWrapper.component'
 
 class Main extends Component {
     render() {
         return (
-            <div className={styles.container}>
-                <h1>Seed React Project</h1>
+            <div className={container}>
+                <aside className={aside}>
+                    <ServerWrapper />
+                    <AppsWrapper />
+                </aside>
                 {this.props.children}
             </div>
         )
@@ -16,6 +26,6 @@ class Main extends Component {
 
 Main.propTypes = {
     children: React.PropTypes.object
-}
+};
 
 export default Main;

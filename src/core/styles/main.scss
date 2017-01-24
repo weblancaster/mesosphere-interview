@@ -1,0 +1,14 @@
+$baseBackground: #eee;
+$lightDarkBackground: #1e1e1e;
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.aside {
+    background: $lightDarkBackground;
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+}

@@ -7,9 +7,11 @@ import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import configureStore from './shared/index.store';
 
 // components
+// import Feat1 from './feat1/feat1.container';
 import Main from './core/main.component';
+
 import NotFound from './core/notFound.component';
-import Feat1 from './feat1/feat1.container';
+import ClusterDashboard from './cluster-dashboard/clusterWrapper.component';
 
 const store = configureStore();
 
@@ -17,7 +19,7 @@ render(
     (<Provider store={store}>
         <Router history={browserHistory}>
             <Route component={Main} path="/">
-                <IndexRoute component={Feat1} />
+                <IndexRoute component={ClusterDashboard} />
             </Route>
             <Route component={NotFound} path="*" />
         </Router>

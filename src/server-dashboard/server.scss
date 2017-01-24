@@ -1,0 +1,45 @@
+.container {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    font-size: 12px;
+    margin: 0 10px;
+}
+
+.button-content {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    font-size: 34px;
+    font-weight: lighter;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add {
+    @extend .button-content;
+    border-color: #fff;
+    color: #fff;
+}
+
+.remove {
+    @extend .button-content;
+    color: #646464;
+    border-color: #646464;
+}
+
+.remove + span {
+    color: #646464;
+}
