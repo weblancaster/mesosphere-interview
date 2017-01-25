@@ -1,5 +1,5 @@
 $lightDark: #323232;
-$navigationItemBorder: 2px solid;
+$navigationItemBorder: 4px solid;
 
 // custom apps color
 $hadoopCustomColor: #c40dc9;
@@ -9,42 +9,42 @@ $stormCustomColor: #2ce19c;
 $sparkCustomColor: #69fa1a;
 
 :global {
-    .hadoop:not(.clusterBoxItem) {
+    .hadoop:not(.appInCluster) {
         border-left: $navigationItemBorder $hadoopCustomColor;
     }
-    .hadoop.clusterBoxItem,
+    .hadoop.appInCluster,
     .hadoop .add {
         background: $hadoopCustomColor;
     }
 
-    .rails:not(.clusterBoxItem) {
+    .rails:not(.appInCluster) {
         border-left: $navigationItemBorder $railsCustomColor;
     }
-    .rails.clusterBoxItem,
+    .rails.appInCluster,
     .rails .add {
         background: $railsCustomColor;
     }
 
-    .chronos:not(.clusterBoxItem) {
+    .chronos:not(.appInCluster) {
         border-left: $navigationItemBorder $chronosCustomColor;
     }
-    .chronos.clusterBoxItem,
+    .chronos.appInCluster,
     .chronos .add {
         background: $chronosCustomColor;
     }
 
-    .storm:not(.clusterBoxItem) {
+    .storm:not(.appInCluster) {
         border-left: $navigationItemBorder $stormCustomColor;
     }
-    .storm.clusterBoxItem,
+    .storm.appInCluster,
     .storm .add {
         background: $stormCustomColor;
     }
 
-    .spark:not(.clusterBoxItem) {
+    .spark:not(.appInCluster) {
         border-left: $navigationItemBorder $sparkCustomColor;
     }
-    .spark.clusterBoxItem,
+    .spark.appInCluster,
     .spark .add {
         background: $sparkCustomColor;
     }

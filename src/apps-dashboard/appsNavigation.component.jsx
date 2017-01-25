@@ -2,47 +2,34 @@ import {
     navigation
 } from './apps.scss';
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import AppsNavigationItem from './appsNavigationItem.component';
 
-class AppsWrapper extends Component {
+class AppsNavigation extends Component {
     render() {
+        let { dispatch } = this.props;
+
         return (
             <ul className={navigation}>
                 {this.props.apps.map((app, index) => {
-                    return <AppsNavigationItem key={index} name={app.name} customStyleName={app.customStyleName}/>
+                    return <AppsNavigationItem dispatch={dispatch} key={index} name={app.name} appName={app.appName} />
                 })}
             </ul>
         )
     }
 }
 
-AppsWrapper.defaultProps = {
-    apps: [
-        {
-            name: 'Hadoop',
-            customStyleName: 'hadoop'
-        },
-        {
-            name: 'Rails',
-            customStyleName: 'rails'
-        },
-        {
-            name: 'Chronos',
-            customStyleName: 'chronos'
-        },
-        {
-            name: 'Storm',
-            customStyleName: 'storm'
-        },
-        {
-            name: 'Spark',
-            customStyleName: 'spark'
-        }
-    ]
+AppsNavigation.propTypes = {
+    apps: PropTypes.arrayOf(PropTypes.object).isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
-AppsWrapper.propTypes = {
-    apps: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+function mapStateToProps(state) {
+    let { apps } = state.app;
 
-export default AppsWrapper;
+    return {
+        apps
+    }
+}
+
+export default connect(mapStateToProps)(AppsNavigation);

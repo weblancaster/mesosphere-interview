@@ -2,21 +2,21 @@ import {
     navigationItem
 } from './apps.scss';
 import React, { PropTypes } from 'react';
-import AppsNavigationActions from './appsNavigationActions.component'
+import AppsNavigationActions from './appsNavigationButtons.component'
 
-const AppsNavigationItem = ({name, customStyleName, index}) => {
+const AppsNavigationItem = ({dispatch, name, appName}) => {
     return (
-        <li className={`${navigationItem} ${customStyleName}`} key={index}>
+        <li className={`${navigationItem} ${appName}`}>
             <span>{name}</span>
-            <AppsNavigationActions />
+            <AppsNavigationActions dispatch={dispatch} appName={appName} />
         </li>
     )
 };
 
 AppsNavigationItem.propTypes = {
-    index: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    customStyleName: PropTypes.string.isRequired
+    appName: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 export default AppsNavigationItem;

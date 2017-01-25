@@ -1,6 +1,6 @@
 import { dashboard, title } from './cluster.scss';
 import React, { Component } from 'react';
-import ClusterList from './clusterList.component';
+import ClusterList from './clusterList.container';
 
 class ClusterWrapper extends Component {
     render() {
@@ -12,9 +12,5 @@ class ClusterWrapper extends Component {
         )
     }
 }
-
-ClusterWrapper.propTypes = {
-
-};
 
 export default ClusterWrapper;

@@ -1,9 +1,9 @@
 import {
     button
-} from './server.scss';
+} from './clusterControls.scss';
 import React, { PropTypes } from 'react';
 
-const ServerButton = ({styles, icon, label, action}) => {
+const ClusterControls = ({styles, icon, label, action}) => {
     return (
         <button className={button} onClick={action}>
             <span className={styles}>{icon}</span>
@@ -12,11 +12,11 @@ const ServerButton = ({styles, icon, label, action}) => {
     );
 };
 
-ServerButton.propTypes = {
+ClusterControls.propTypes = {
     styles: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
     action: PropTypes.func.isRequired,
     label: PropTypes.string
 };
 
-export default ServerButton;
+export default ClusterControls;

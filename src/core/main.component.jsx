@@ -7,7 +7,7 @@ import {
 } from './styles/main.scss';
 import React, { Component } from 'react';
 
-import ServerWrapper from '../server-dashboard/serverWrapper.component';
+import ServerWrapper from '../cluster-controls/clusterControlsWrapper.container';
 import AppsWrapper from '../apps-dashboard/appsWrapper.component'
 
 class Main extends Component {

@@ -2,8 +2,10 @@ import {
     combineReducers
 } from 'redux';
 
-import feat1 from '../feat1/feat1.reducer';
+import cluster from '../cluster-dashboard/cluster.reducer';
+import app from '../apps-dashboard/apps.reducer';
 
 export default combineReducers({
-    feat1
+    cluster,
+    app
 });

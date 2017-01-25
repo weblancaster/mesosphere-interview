@@ -1,6 +1,7 @@
 $mainDashboard: #000;
 $fontWhite: #fff;
 $clusterBackground: #1e1e1e;
+$clusterBorderRadius: 5px;
 
 .dashboard {
     background: $mainDashboard;
@@ -16,18 +17,55 @@ $clusterBackground: #1e1e1e;
 }
 
 .clusterList {
+    width: 900px;
     overflow: hidden;
 }
 
 .clusterBox {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 200px;
     height: 140px;
     background: $clusterBackground;
-    border-radius: 5px;
+    border-radius: $clusterBorderRadius;
     float: left;
     margin: 0 20px 20px 0;
+    justify-content: space-between;
+}
+
+.clusterApp {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
+
+    &:nth-child(1) {
+        border-top-left-radius: $clusterBorderRadius;
+        border-bottom-left-radius: $clusterBorderRadius;
+    }
+
+    &:nth-child(2) {
+        border-top-right-radius: $clusterBorderRadius;
+        border-bottom-right-radius: $clusterBorderRadius;
+    }
+}
+
+.clusterBoxAbbr {
+    font-size: 32px;
+    margin: 0;
+}
+
+.clusterBoxName {
+    font-size: 22px;
+    margin: 5px 0 5px;
+}
+.clusterBoxDate {
+    font-size: 12px;
+    color: #00141e;
+}
+
+.clusterBoxName,
+.clusterBoxDate {
+    display: block;
 }

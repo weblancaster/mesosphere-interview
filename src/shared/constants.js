@@ -1,2 +1,2 @@
-// feat1
-export const CHANGE_COUNTER = 'CHANGE_COUNTER';
+// clusters
+export const SET_CLUSTER = 'SET_CLUSTER';
