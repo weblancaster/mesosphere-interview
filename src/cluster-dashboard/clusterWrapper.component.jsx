@@ -1,3 +1,5 @@
+'use strict';
+
 import { dashboard, title } from './cluster.scss';
 import React, { Component } from 'react';
 import ClusterList from './clusterList.container';

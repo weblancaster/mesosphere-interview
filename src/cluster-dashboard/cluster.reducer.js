@@ -1,3 +1,5 @@
+'use strict';
+
 import {
     SET_CLUSTER
 } from '../shared/constants';
@@ -10,7 +12,7 @@ const initialState = {
                 {
                     abbr: 'Hd',
                     name: 'Hadoop',
-                    addedAt: Date.now(),
+                    addedAt: 1485328453857,
                     appName: 'hadoop'
                 }
             ]
@@ -21,7 +23,7 @@ const initialState = {
                 {
                     abbr: 'Ch',
                     name: 'Chronos',
-                    addedAt: Date.now(),
+                    addedAt: 1485328453857,
                     appName: 'chronos'
                 }
             ]
@@ -60,7 +62,7 @@ const initialState = {
                 {
                     abbr: 'Sp',
                     name: 'Spark',
-                    addedAt: Date.now(),
+                    addedAt: 1485328453857,
                     appName: 'spark'
                 }
             ]

@@ -1,3 +1,5 @@
+'use strict';
+
 import {
     button
 } from './clusterControls.scss';

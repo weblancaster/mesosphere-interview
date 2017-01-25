@@ -1,22 +1,18 @@
+'use strict';
+
 import {
     title
 } from './apps.scss';
-import React, { Component } from 'react';
-import AppsNavigation from './appsNavigation.component';
+import React  from 'react';
+import AppsNavigation from './appsNavigation.container';
 
-class AppsWrapper extends Component {
-    render() {
-        return (
-            <div>
-                <h3 className={title}>Available Apps</h3>
-                <AppsNavigation />
-            </div>
-        )
-    }
-}
-
-AppsWrapper.propTypes = {
-
+const AppsWrapper = () => {
+    return (
+        <div>
+            <h3 className={title}>Available Apps</h3>
+            <AppsNavigation />
+        </div>
+    )
 };
 
 export default AppsWrapper;

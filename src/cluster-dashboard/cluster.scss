@@ -39,16 +39,7 @@ $clusterBorderRadius: 5px;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-
-    &:nth-child(1) {
-        border-top-left-radius: $clusterBorderRadius;
-        border-bottom-left-radius: $clusterBorderRadius;
-    }
-
-    &:nth-child(2) {
-        border-top-right-radius: $clusterBorderRadius;
-        border-bottom-right-radius: $clusterBorderRadius;
-    }
+    text-align: center;
 }
 
 .clusterBoxAbbr {
@@ -60,6 +51,7 @@ $clusterBorderRadius: 5px;
     font-size: 22px;
     margin: 5px 0 5px;
 }
+
 .clusterBoxDate {
     font-size: 12px;
     color: #00141e;

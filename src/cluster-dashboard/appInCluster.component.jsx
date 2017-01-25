@@ -1,3 +1,5 @@
+'use strict';
+
 import {
     clusterApp,
     clusterBoxAbbr,

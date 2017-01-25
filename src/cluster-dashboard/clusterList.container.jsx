@@ -1,3 +1,5 @@
+'use strict';
+
 import {clusterList} from './cluster.scss';
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';

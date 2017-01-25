@@ -1,3 +1,5 @@
+'use strict';
+
 import {
     navigationItem
 } from './apps.scss';

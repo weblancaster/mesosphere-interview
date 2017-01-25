@@ -1,30 +1,43 @@
-# Seed React project
+# Mesos dashboard
 
-Yet another React boilerplate to rapidly and easily start a React stack project from scratch without the tedious configuration work.
+The project was built using the React eco-system from a seed project I have created while ago, which includes out of the box the tools I have found many benefits like the ones listed below.
 
-### Main Modules/Feats
+React:
+    Is being used because enable developers to rapidly build component based web apps with reusability and isolation in mind. Performance is also a important factor.
+Redux:
+    Flux design pattern to organize and share UI states, preferably Redux because of it’s one state tree nature making it easier to scale and maintain long term projects.
+ React-Router:
+	Easy to use and good community support, so far the most reliable for React eco-system.
+Babel:
+	Empower developers to use ES6/7 features where they can take advantages being more productive and building better software using helpful feats not supported or partially supported in browsers in which can be transpiled back to ES5/4.
+Wepack:
+	Enable us to use altogether React, Redux, Babel, CSS in a modular system way where can be bundled and distributed. Other reasons to like Webpack are the development friendly environments that can be set, on demand loading based on paths, tree shaking (bundle only what is used), and performance/optimization modules as helpers e.g use React production mode, remove react prop types for production, etc.
+SASS/PostCSS:
+	To boost productivity making coding CSS a bit more dynamic where variables can be used, comparability, autoprefixes, etc.
+CSS modules:
+	Used to build component based UIs making styles isolated using the class with a defined pattern, avoiding name collision and global styles.
+Jest:
+	Starting to explore more. Work “out-of-the-box” with React eco system which makes configuration process much easier to setup and use (doesn’t need hacks like Karma and Webpack together), unfortunately the mock feat from the tool is a pain because of the context webpack require modules.
+
+### Main tools/modules
 - React
-    - Hot module reload (https://github.com/gaearon/react-hot-loader)
-    - Production performance build (http://stackoverflow.com/questions/22118915/how-to-turn-on-off-reactjs-development-mode)
-- Redux (https://github.com/reactjs/redux)
-    - Redux-logger (https://github.com/evgenyrodionov/redux-logger)
-    - Redux-thunk (https://github.com/gaearon/redux-thunk)
-- React Router (https://github.com/ReactTraining/react-router)
-- Babel/ES6/7 (https://github.com/babel/babel)
-- Webpack (https://github.com/webpack/webpack)
-    - Webpack dashboard (https://github.com/FormidableLabs/webpack-dashboard)
-    - CSS modules (https://github.com/css-modules/css-modules)
-- PostCSS (https://github.com/postcss/postcss)
-    - Autoprefixer (https://github.com/postcss/autoprefixer)
-    - PostCSS-simple-var (https://github.com/postcss/postcss-simple-vars)
-    - PostCSS-partial-import (postcss-partial-import)
+    - Hot module reload
+- Redux
+    - Redux-logger
+    - Redux-thunk
+- React Router
+- Babel/ES6/7
+- Webpack
+    - Webpack dashboard 
+- SASS/PostCSS
+    - CSS modules 
 - Unit tests/Coverage
-    - Jest (https://facebook.github.io/jest/)
+    - Jest
     - and React/Redux modules for unit testing
 
 ### Project Structure
 
-Redux docs example of folder structure, it's good for todo examples but not for real world application so **(DO NOT FOLLOW THIS PATTERN)**.
+Redux-like projects architecture in the wild, it's good reference for todo app example but not for real world application so which is hard to scale.
 ```
 | src
     | actions
@@ -42,7 +55,7 @@ Redux docs example of folder structure, it's good for todo examples but not for 
 |
 ```
 
-After building/architecting a couple of React/Redux applications I have found that the structure defined in this repo is the most productive and scalable so far. But as everything there is always space for improvements so please let me know your ideas. **(SUGGESTED PATTERN)**
+After architecting a couple of React/Redux applications I have found that the structure defined in this repo is the most productive and scalable so far focusing in component based UIs (isolated components) but there is always space for improvements so please let me know your ideas.
 ```
 | src
     | index.html
@@ -51,7 +64,6 @@ After building/architecting a couple of React/Redux applications I have found th
         | index.reducer.js
         | index.store.js
         | constants.js
-        | utils.js
     | featureBla
         | featureBla.actions.js
         | featureBla.container.jsx
@@ -69,3 +81,13 @@ After building/architecting a couple of React/Redux applications I have found th
             | grid.css
 |
 ```
+
+### How to run
+
+Requirements:
+    Node 7+ suggested (version 5 at least);
+
+Open terminal and run `npm i` to install all necessary packages.
+`npm start` will start the webpack server where will open `localhost:8000` automatically.
+
+To run unit tests `npm test`, to distribution version (which include performance improvements based on production env var) version `npm run `

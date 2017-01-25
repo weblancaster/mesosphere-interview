@@ -1,3 +1,5 @@
+'use strict';
+
 require('normalize.css');
 require('./styles/base.scss');
 
@@ -8,7 +10,7 @@ import {
 import React, { Component } from 'react';
 
 import ServerWrapper from '../cluster-controls/clusterControlsWrapper.container';
-import AppsWrapper from '../apps-dashboard/appsWrapper.component'
+import AppsWrapper from '../apps-dashboard/appsWrapper.component';
 
 class Main extends Component {
     render() {

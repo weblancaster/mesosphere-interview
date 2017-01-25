@@ -1,3 +1,5 @@
+'use strict';
+
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk';
 
@@ -14,77 +16,54 @@ import {
     removeLastCluster
 } from '../cluster.actions';
 
-describe('cluster-dashboard', () => {
-    it('handles startNewCluster action', () => {
-        const expectedAction = {
-            available: true
-        };
+describe('HANDLE CLUSTER ACTIONS', () => {
+    const cluster = {
+        available: true,
+        appsRunning: []
+    };
 
-        expect(startNewCluster()).toEqual(expectedAction);
+    it('handles startNewCluster action', () => {
+        expect(startNewCluster()).toEqual(cluster);
     });
 
     it('handles setCluster action', () => {
         const expectedAction = {
             type: SET_CLUSTER,
-            clusters: [
-                {
-                    available: true
-                }
-            ]
+            clusters: [cluster]
         };
 
-        expect(setCluster([{
-            available: true
-        }])).toEqual(expectedAction);
+        expect(setCluster([cluster])).toEqual(expectedAction);
     });
 
     it('handles addNewCluster action', () => {
         const expectedAction = {
             type: SET_CLUSTER,
-            clusters: [
-                {
-                    available: true
-                },
-                {
-                    available: true
-                }
-            ]
+            clusters: [cluster, cluster]
         };
         const store = mockStore({
             cluster: {
-                clusters: [{
-                    available: true
-                }]
+                clusters: [cluster]
             }
         });
 
         store.dispatch(addNewCluster());
 
         expect(store.getActions()[0]).toEqual(expectedAction);
-        // expect(store.getState().cluster.clusters.length).toEqual(2);
     });
 
     it('handles removeLastCluster action', () => {
         const expectedAction = {
             type: SET_CLUSTER,
-            clusters: [
-                {
-                    available: true
-                }
-            ]
+            clusters: [cluster]
         };
         const store = mockStore({
             cluster: {
-                clusters: [
-                    {available: true},
-                    {available: true}
-                ]
+                clusters: [cluster, cluster]
             }
         });
 
         store.dispatch(removeLastCluster());
 
         expect(store.getActions()[0]).toEqual(expectedAction);
-        // expect(store.getState().cluster.clusters.length).toEqual(1);
     });
 });
