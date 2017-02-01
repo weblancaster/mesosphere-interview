@@ -51,11 +51,17 @@ export function addNewCluster() {
  */
 export function removeLastCluster() {
     return (dispatch, getState) => {
+        let appsRunningInCluster
         const clusters = getState().cluster.clusters.slice(0);
-        const appsRunningInCluster = clusters[clusters.length - 1].appsRunning;
-        const updatedClusters = clusters.slice(0, clusters.length - 1);
 
-        dispatch(setCluster(updatedClusters));
+        if ( clusters.length <= 0 ) {
+            return false;
+        }
+
+        appsRunningInCluster = clusters[clusters.length - 1].appsRunning;
+        clusters.pop();
+
+        dispatch(setCluster(clusters));
 
         appsRunningInCluster.forEach((app) => {
             dispatch(findAvailableCluster(app));
